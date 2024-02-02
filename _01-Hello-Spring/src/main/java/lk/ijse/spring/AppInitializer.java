@@ -44,7 +44,15 @@ public class AppInitializer {
         SpringBean2 bean2 = acx.getBean(SpringBean2.class);
         System.out.println(bean2);
 
-        acx.registerShutdownHook(); // close context after shutdown JVM one moment!
+//        acx.registerShutdownHook(); // close context after shutdown JVM one moment!
+
+        System.out.println(acx);
+
+        acx.close();
+
+        System.out.println(acx);
+
+        bean1.myFunction();
 
     }
 }

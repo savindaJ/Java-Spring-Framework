@@ -12,4 +12,8 @@ public class SpringBean {
     public SpringBean() {
         System.out.println("Spring Bean instance initialized !");
     }
+
+    public void myFunction(){
+        System.out.println("my-Function !");
+    }
 }
