@@ -8,5 +8,12 @@
     <artifactId>_01-Hello-Spring</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-
+    <dependencies>
+<!--        adding a spring core container-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.3.31</version>
+        </dependency>
+    </dependencies>
 </project>
