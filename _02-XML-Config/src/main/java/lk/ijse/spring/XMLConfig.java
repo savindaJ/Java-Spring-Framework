@@ -12,7 +12,7 @@ public class XMLConfig {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext act = new AnnotationConfigApplicationContext("context.xml");
         act.register(SpringBean.class);
-        SpringBean bean = act.getBean(SpringBean.class);
+        SpringBean bean = act.getBean(SpringBean.class); // this obj is POJO this object directly depend on xml file
         System.out.println(bean);
 
     }
