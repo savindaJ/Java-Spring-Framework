@@ -1,6 +1,7 @@
 package lk.ijse.spring;
 
 import lk.ijse.spring.bean.BeanOne;
+import lk.ijse.spring.bean.BeanTwo;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * @since : 0.1.0
  **/
 @Configuration
-@ComponentScan(/*basePackages = "lk.ijse.spring.bean" ,*/ basePackageClasses = BeanOne.class) // search components in root but lk.ijse.spring.bean -> this path scan one this path
+@ComponentScan(/*basePackages = "lk.ijse.spring.bean" ,*/ basePackageClasses = BeanTwo.class) // search components in root but lk.ijse.spring.bean -> this path scan one this path
 public class Config {
     public Config() {
         System.out.println("config");
