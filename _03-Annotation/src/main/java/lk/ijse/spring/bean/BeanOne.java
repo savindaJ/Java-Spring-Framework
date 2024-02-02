@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @since : 0.1.0
  **/
 @Component
-@ComponentScan(basePackages = "lk.ijse.spring")
+//@ComponentScan(basePackages = "lk.ijse.spring")
 public class BeanOne {
     public BeanOne() {
         System.out.println("bean 1 !");
