@@ -2,7 +2,6 @@ package lk.ijse.spring;
 
 import lk.ijse.spring.bean.SpringBean;
 import lk.ijse.spring.bean.SpringBean2;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -33,17 +32,19 @@ public class AppInitializer {
         //SpringBean2 bean2 = acx.getBean(SpringBean2.class); // Err has been closed already
         //System.out.println(bean2);
 
-        Runtime runtime = Runtime.getRuntime(); // get jvm / run time
-        runtime.addShutdownHook(new Thread(new Runnable() {
-            @Override
-            public void run() { // run is call to shut down to jvm
-                acx.close();
-                System.out.println("jvm is about to shutdown");
-            }
-        }));
+//        Runtime runtime = Runtime.getRuntime(); // get jvm / run time
+//        runtime.addShutdownHook(new Thread(new Runnable() {
+//            @Override
+//            public void run() { // run is call to shut down to jvm
+//                acx.close();
+//                System.out.println("jvm is about to shutdown");
+//            }
+//        }));
 
         SpringBean2 bean2 = acx.getBean(SpringBean2.class);
         System.out.println(bean2);
+
+        acx.registerShutdownHook(); // close context after shutdown JVM one moment!
 
     }
 }
