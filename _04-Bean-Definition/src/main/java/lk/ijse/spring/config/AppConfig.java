@@ -1,9 +1,12 @@
 package lk.ijse.spring.config;
 
 import lk.ijse.spring.bean.BeanOne;
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+
+import javax.sql.DataSource;
 
 /**
  * @author : savindaJ
@@ -18,7 +21,14 @@ public class AppConfig {
     }
 
     @Bean // this is bean definition !
-    public BeanOne getBean(){
-        return new BeanOne();
+    public BasicDataSource getConnection(){
+        BasicDataSource bcp = new BasicDataSource();
+        bcp.setDriverClassName("");
+        bcp.setInitialSize(2);
+        bcp.setMaxTotal(10);
+        bcp.setPassword("");
+        bcp.setUrl("");
+        bcp.setUsername("");
+        return bcp;
     }
 }
