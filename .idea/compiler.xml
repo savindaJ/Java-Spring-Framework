@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="_03-Annotation" />
         <module name="_04-Bean-Definition" />
+        <module name="_05-Bean-Scope" />
         <module name="_02-XML-Config" />
         <module name="_01-Hello-Spring" />
       </profile>

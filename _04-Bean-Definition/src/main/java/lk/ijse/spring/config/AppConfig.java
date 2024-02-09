@@ -20,15 +20,15 @@ public class AppConfig {
         System.out.println("Configure init !!");
     }
 
-    @Bean // this is bean definition !
+    /*@Bean(name = "myBeanConnection") // this is bean definition ! full mode
     public BasicDataSource getConnection(){
-        BasicDataSource bcp = new BasicDataSource();
-        bcp.setDriverClassName("");
-        bcp.setInitialSize(2);
-        bcp.setMaxTotal(10);
-        bcp.setPassword("");
-        bcp.setUrl("");
-        bcp.setUsername("");
-        return bcp;
-    }
+        BasicDataSource dbpc = new BasicDataSource();
+        dbpc.setUsername("root");
+        dbpc.setUrl("jdbc:mysql://localhost:3306/web_test");
+        dbpc.setPassword("80221474");
+        dbpc.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dbpc.setInitialSize(2);
+        dbpc.setMaxTotal(5);
+        return dbpc;
+    }*/
 }

@@ -6,6 +6,8 @@ import lk.ijse.spring.utilize.Spring;
 import org.apache.commons.dbcp2.BasicDataSource;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -26,9 +28,18 @@ public class AppInitializer {
         System.out.println("bean create definition in hear , beanOne :: "+ beanOne); // true
         System.out.println("bean create definition in hear , beanTwo :: "+ beanTwo); //true
 
-        BasicDataSource bean = (BasicDataSource) act.getBean("getConnection"); // get bean
+        BasicDataSource bean = (BasicDataSource) act.getBean("myBeanConnection"); // get bean
         Connection connection = bean.getConnection();
         System.out.println(connection);
 
+        PreparedStatement pstm = connection.prepareStatement("select*from customer");
+        ResultSet set = pstm.executeQuery();
+        while (set.next()){
+            System.out.println(
+                            set.getString(1)
+                            +" ,"+set.getString(2)
+                            +" ,"+set.getString(3)
+                            +" ,"+set.getDouble(4));
+        }
     }
 }
