@@ -14,5 +14,20 @@ public class AppInitializer {
         ctx.register(AppConfig.class);
         ctx.refresh();
         ctx.registerShutdownHook(); // help to destroy beans
+
+//                out put
+//                app init !
+//                Bean one > Instantiate !
+//                Bean one > set Bean name Aware !
+//                Bean one > set Bean factory !
+//                Bean one > set application context !
+//                Bean one > after Property set !
+//                Bean Two > instantiate !
+//                Bean Two > set Bean name Aware !
+//                Bean Two > set Bean factory !
+//                Bean Two > set application context !
+//                Bean Two > after Property set !
+//                Bean Two > destroy !
+//                Bean one > destroy !
     }
 }
