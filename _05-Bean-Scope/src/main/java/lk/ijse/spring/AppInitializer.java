@@ -15,12 +15,12 @@ public class AppInitializer {
         ctx.register(AppConfig.class);
         ctx.refresh();
 
-        BeanOne bean = (BeanOne) ctx.getBean("getBean");
-        System.out.println(bean);
-        bean.seyHi();
-
-        BeanOne bean2 = (BeanOne) ctx.getBean("getBean");
-        System.out.println(bean2);
-        bean.seyHi();
+//        BeanOne bean = (BeanOne) ctx.getBean("getBean");
+//        System.out.println(bean);
+//        bean.seyHi();
+//
+//        BeanOne bean2 = (BeanOne) ctx.getBean("getBean");
+//        System.out.println(bean2);
+//        bean.seyHi();
     }
 }
