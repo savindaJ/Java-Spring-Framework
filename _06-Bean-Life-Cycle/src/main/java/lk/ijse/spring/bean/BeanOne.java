@@ -19,12 +19,12 @@ public class BeanOne implements BeanNameAware, BeanFactoryAware, ApplicationCont
 
     @Override
     public void setBeanName(String s) {
-        System.out.println("Bean one > set Bean name Aware !");
+        System.out.println("Bean one > set Bean name Aware : "+s);
     }
 
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        System.out.println("Bean one > set Bean factory !");
+        System.out.println("Bean one > set Bean factory : "+beanFactory.getClass().getName());
     }
 
     @Override
