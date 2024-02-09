@@ -10,8 +10,9 @@ import org.springframework.stereotype.Component;
  * @date : 2024-02-09
  * @since : 0.1.0
  **/
-//@Scope(scopeName = "prototype") // remove singleton behavior // default
-//@Component
+//@Scope(scopeName = "prototype") // remove singleton behavior // default singleton
+//@Scope(scopeName = "singleton") // default singleton
+//@Component // goto config class seen this bean method
 public class BeanOne {
     public BeanOne() {
         System.out.println("ben One initialize !");

@@ -18,6 +18,7 @@ public class AppConfig {
         System.out.println("App config init !!!");
     }
 
+//    @Scope(scopeName = "singleton")
     @Scope(scopeName = "prototype")
     @Bean
     public BeanOne getBean(){
