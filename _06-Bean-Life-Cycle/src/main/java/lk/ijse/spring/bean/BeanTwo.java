@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
  * @since : 0.1.0
  **/
 @Component
-public class BeanOne {
-    public BeanOne() {
-        System.out.println("Bean one > Instantiate !");
+public class BeanTwo {
+    public BeanTwo() {
+        System.out.println("Bean Two > instantiate !");
     }
 }
