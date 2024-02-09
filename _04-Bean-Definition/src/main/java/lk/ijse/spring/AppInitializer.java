@@ -26,6 +26,5 @@ public class AppInitializer {
         BeanOne bean = act.getBean(BeanOne.class);
         bean.seyHi();
 
-
     }
 }
