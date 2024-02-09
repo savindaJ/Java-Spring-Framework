@@ -1,5 +1,6 @@
 package lk.ijse.spring;
 
+import lk.ijse.spring.bean.BeanOne;
 import lk.ijse.spring.config.AppConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -13,7 +14,11 @@ public class AppInitializer {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
         ctx.register(AppConfig.class);
         ctx.refresh();
+        BeanOne bean = ctx.getBean(BeanOne.class);
+        System.out.println(bean.getBeanOne());
         ctx.registerShutdownHook(); // help to destroy beans
+
+
 
 //                app init !
 //                Bean one > Instantiate !
