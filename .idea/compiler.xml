@@ -6,9 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="_01-Hello-Spring" />
         <module name="_03-Annotation" />
+        <module name="_04-Bean-Definition" />
         <module name="_02-XML-Config" />
+        <module name="_01-Hello-Spring" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
