@@ -1,5 +1,7 @@
 package lk.ijse.spring.bean;
 
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -11,6 +13,7 @@ import javax.annotation.PreDestroy;
  * @since : 0.1.0
  **/
 @Component
+//@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class BeanThree {
     public BeanThree() {
         System.out.println("Bean Three > initialize !");

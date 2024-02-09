@@ -17,6 +17,11 @@ public class AppInitializer {
         BeanOne bean = ctx.getBean(BeanOne.class);
         System.out.println("get bean two : "+bean.getBeanTwo());
         System.out.println("get bean three :"+bean.getThree());
+
+        BeanOne bean2 = ctx.getBean(BeanOne.class);
+        System.out.println("get bean two : "+bean2.getBeanTwo());
+        System.out.println("get bean three :"+bean2.getThree());
+
         ctx.registerShutdownHook(); // help to destroy beans
 
 

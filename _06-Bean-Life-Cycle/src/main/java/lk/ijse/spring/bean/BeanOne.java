@@ -2,7 +2,6 @@ package lk.ijse.spring.bean;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -19,27 +18,26 @@ import org.springframework.stereotype.Component;
 public class BeanOne implements BeanNameAware, BeanFactoryAware, ApplicationContextAware, InitializingBean, DisposableBean {
 
     BeanTwo tow;
-
-    @Autowired
     BeanThree three;
 
 //    public BeanOne() {
 //        System.out.println("Bean one > Instantiate !");
 //    }
 
-    public BeanOne(BeanTwo two){
+    public BeanOne(BeanTwo two, BeanThree three) {
         System.out.println("Inject Bean two !");
         this.tow = two;
+        this.three = three;
     }
 
     @Override
     public void setBeanName(String s) {
-        System.out.println("Bean one > set Bean name Aware : "+s);
+        System.out.println("Bean one > set Bean name Aware : " + s);
     }
 
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        System.out.println("Bean one > set Bean factory : "+beanFactory.getClass().getName());
+        System.out.println("Bean one > set Bean factory : " + beanFactory.getClass().getName());
     }
 
     @Override
@@ -57,11 +55,11 @@ public class BeanOne implements BeanNameAware, BeanFactoryAware, ApplicationCont
         System.out.println("Bean one > set application context !");
     }
 
-    public BeanTwo getBeanTwo(){
+    public BeanTwo getBeanTwo() {
         return tow;
     }
 
-    public BeanThree getThree(){
+    public BeanThree getThree() {
         return three;
     }
 }
