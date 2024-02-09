@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/_03-Annotation/pom.xml" />
         <option value="$PROJECT_DIR$/_04-Bean-Definition/pom.xml" />
         <option value="$PROJECT_DIR$/_05-Bean-Scope/pom.xml" />
+        <option value="$PROJECT_DIR$/_06-Bean-Life-Cycle/pom.xml" />
       </list>
     </option>
   </component>

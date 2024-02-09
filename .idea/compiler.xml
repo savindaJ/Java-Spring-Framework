@@ -11,6 +11,7 @@
         <module name="_05-Bean-Scope" />
         <module name="_02-XML-Config" />
         <module name="_01-Hello-Spring" />
+        <module name="_06-Bean-Life-Cycle" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

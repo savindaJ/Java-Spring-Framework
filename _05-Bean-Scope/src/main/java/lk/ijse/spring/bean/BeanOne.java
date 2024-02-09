@@ -1,5 +1,7 @@
 package lk.ijse.spring.bean;
 
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Component;
 //@Scope(scopeName = "prototype") // remove singleton behavior // default singleton
 //@Scope(scopeName = "singleton") // default singleton
 //@Component // goto config class seen this bean method
+//    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class BeanOne {
     public BeanOne() {
         System.out.println("ben One initialize !");

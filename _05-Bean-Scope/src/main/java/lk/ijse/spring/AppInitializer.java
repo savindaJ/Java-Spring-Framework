@@ -22,5 +22,7 @@ public class AppInitializer {
 //        BeanOne bean2 = (BeanOne) ctx.getBean("getBean");
 //        System.out.println(bean2);
 //        bean.seyHi();
+        boolean getBean = ctx.containsBeanDefinition("getBean");
+        System.out.println(getBean); // not get BEAN but BEAN definition in hear !
     }
 }

@@ -11,5 +11,7 @@
     <file url="file://$PROJECT_DIR$/_04-Bean-Definition/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/_05-Bean-Scope/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/_05-Bean-Scope/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/_06-Bean-Life-Cycle/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/_06-Bean-Life-Cycle/src/main/resources" charset="UTF-8" />
   </component>
 </project>
