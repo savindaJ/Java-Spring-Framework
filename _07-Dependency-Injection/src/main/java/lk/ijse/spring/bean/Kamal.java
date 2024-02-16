@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
  * @since : 0.1.0
  **/
 @Component
-@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+//@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class Kamal implements Injector, BeanNameAware, BeanFactoryAware, ApplicationContextAware, InitializingBean, DisposableBean {
 
     // kamal has two girl friends but he is not sure which one to choose
