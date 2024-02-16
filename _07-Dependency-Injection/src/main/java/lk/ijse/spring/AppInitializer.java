@@ -16,7 +16,7 @@ public class AppInitializer {
         ctx.refresh();
 
         Kamal bean = ctx.getBean(Kamal.class);
-        bean.showAfterGirlSet();
+        bean.showAfterGirlsSet();
 
     }
 }

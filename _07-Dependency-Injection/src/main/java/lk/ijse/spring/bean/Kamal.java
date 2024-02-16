@@ -4,11 +4,10 @@ import lk.ijse.spring.util.Injector;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.PostConstruct;
 
 /**
  * @author : savindaJ
@@ -18,9 +17,16 @@ import javax.annotation.PostConstruct;
 @Component
 public class Kamal implements Injector, BeanNameAware, BeanFactoryAware, ApplicationContextAware, InitializingBean, DisposableBean {
 
+    // kamal has two girl friends but he is not sure which one to choose
+    // so he is using @Qualifier to choose
+    // @Qualifier is used to resolve the ambiguity when there are multiple beans of the same type.
+    // @Qualifier is used on the field or parameter level.
+    // @Qualifier is declared on the dependency and not on the bean itself.
+
     /*Property injection*/
 //    @Autowired
     private GirlFriend girl;
+    private GirlFriend girlTwo;
 
     /*interface through injection*/
 //    @Autowired
@@ -30,8 +36,9 @@ public class Kamal implements Injector, BeanNameAware, BeanFactoryAware, Applica
     }
 
     /*Constructor injection !*/
-//    @Autowired
-    public Kamal(GirlFriend girlFriend) {
+    @Autowired
+    public Kamal(@Qualifier("sanduni")GirlFriend girlFriend) {
+
         System.out.println("kmal init !");
         this.girl = girlFriend;
         System.out.println("Have i got a girl friend : " + girl);
@@ -75,8 +82,14 @@ public class Kamal implements Injector, BeanNameAware, BeanFactoryAware, Applica
     }
 
 
-    public void showAfterGirlSet(){
-        System.out.println("show method = "+girl);
+    public void showAfterGirlsSet(){
+        System.out.println("show method girl sanduni = "+girl);
+        System.out.println("show method girl pyumi = "+girlTwo);
+    }
+
+    @Autowired
+    public void setGirlTwo(@Qualifier("piyumi")GirlFriend girlFriend){
+        this.girlTwo = girlFriend;
     }
 
 }

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  * @date : 2024-02-09
  * @since : 0.1.0
  **/
-//@Component
+@Component
 public class Piyumi implements GirlFriend {
     @Override
     public void loveOnlyMe() {
