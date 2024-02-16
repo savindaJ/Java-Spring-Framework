@@ -16,7 +16,9 @@ import org.springframework.stereotype.Component;
  * @since : 0.1.0
  **/
 @Component
-@Primary
+//@Primary
+@Qualifier("address")
+@Savinda
 //@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class Sanduni implements GirlFriend, BeanNameAware, BeanFactoryAware, ApplicationContextAware, InitializingBean, DisposableBean {
     public Sanduni() {

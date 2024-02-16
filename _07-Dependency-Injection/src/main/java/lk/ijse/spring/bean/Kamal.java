@@ -26,18 +26,18 @@ public class Kamal implements Injector, BeanNameAware, BeanFactoryAware, Applica
     /*Property injection*/
 //    @Autowired
     private GirlFriend girl;
-    private GirlFriend girlTwo;
+//    private GirlFriend girlTwo;
 
     /*interface through injection*/
 //    @Autowired
     @Override
-    public void injectGirl(GirlFriend girlFriend) {
+    public void injectGirl(@Qualifier("address") GirlFriend girlFriend) {
         this.girl = girlFriend;
     }
 
     /*Constructor injection !*/
     @Autowired
-    public Kamal(@Qualifier("sanduni")GirlFriend girlFriend) {
+    public Kamal(@Qualifier("address") @Savinda GirlFriend girlFriend) {
 
         System.out.println("kmal init !");
         this.girl = girlFriend;
@@ -82,14 +82,14 @@ public class Kamal implements Injector, BeanNameAware, BeanFactoryAware, Applica
     }
 
 
-    public void showAfterGirlsSet(){
-        System.out.println("show method girl sanduni = "+girl);
-        System.out.println("show method girl pyumi = "+girlTwo);
+    public void showAfterGirlsSet() {
+        System.out.println("show method girl sanduni = " + girl);
+//        System.out.println("show method girl pyumi = "+girlTwo);
     }
 
-    @Autowired
+   /* @Autowired
     public void setGirlTwo(@Qualifier("address")GirlFriend girlFriend){
         this.girlTwo = girlFriend;
-    }
+    }*/
 
 }
