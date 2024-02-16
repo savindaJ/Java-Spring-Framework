@@ -1,5 +1,6 @@
 package lk.ijse.spring;
 
+import lk.ijse.spring.bean.Kamal;
 import lk.ijse.spring.config.AppConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -13,5 +14,9 @@ public class AppInitializer {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
         ctx.register(AppConfig.class);
         ctx.refresh();
+
+        Kamal bean = ctx.getBean(Kamal.class);
+        bean.showAfterGirlSet();
+
     }
 }
