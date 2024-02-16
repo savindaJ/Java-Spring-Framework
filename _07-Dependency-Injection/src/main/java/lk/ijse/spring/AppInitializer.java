@@ -18,5 +18,8 @@ public class AppInitializer {
         Kamal bean = ctx.getBean(Kamal.class);
         bean.showAfterGirlsSet();
 
+        Kamal beanTwo = ctx.getBean(Kamal.class);
+        beanTwo.showAfterGirlsSet();
+
     }
 }
