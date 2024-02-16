@@ -37,7 +37,7 @@ public class Kamal implements Injector, BeanNameAware, BeanFactoryAware, Applica
 
     /*Constructor injection !*/
     @Autowired
-    public Kamal(@Qualifier("address") @Savinda GirlFriend girlFriend) {
+    public Kamal(@Qualifier("address") @Savinda /*using my custom annotation*/ GirlFriend girlFriend) {
 
         System.out.println("kmal init !");
         this.girl = girlFriend;
