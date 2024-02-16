@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
  **/
 @Component
 @Qualifier("address")
+//@Savinda
 public class Piyumi implements GirlFriend {
 
     private String address;
