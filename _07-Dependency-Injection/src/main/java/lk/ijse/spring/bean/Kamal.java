@@ -88,7 +88,7 @@ public class Kamal implements Injector, BeanNameAware, BeanFactoryAware, Applica
     }
 
     @Autowired
-    public void setGirlTwo(@Qualifier("piyumi")GirlFriend girlFriend){
+    public void setGirlTwo(@Qualifier("address")GirlFriend girlFriend){
         this.girlTwo = girlFriend;
     }
 
