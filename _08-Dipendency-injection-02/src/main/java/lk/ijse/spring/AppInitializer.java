@@ -12,5 +12,9 @@ public class AppInitializer {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
         ctx.register(AppConfig.class);
         ctx.refresh();
+
+       /* System.getenv().forEach((k, v) -> {
+            System.out.println(k + " : " + v);
+        });*/
     }
 }
