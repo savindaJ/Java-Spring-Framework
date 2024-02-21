@@ -11,9 +11,9 @@
         <module name="_04-Bean-Definition" />
         <module name="_05-Bean-Scope" />
         <module name="_06-Bean-Life-Cycle" />
-        <module name="_08-RunTime-Value-nject" />
         <module name="_02-XML-Config" />
         <module name="_01-Hello-Spring" />
+        <module name="_08-Dipendency-injection-02" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
