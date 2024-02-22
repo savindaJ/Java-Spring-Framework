@@ -20,4 +20,10 @@ public class AppRootConfig {
     }
 
     Connection connection;
+
+    @Bean
+    public ArrayList<String> getArrayList() {
+        System.out.println("ArrayList Instantiated");
+        return new ArrayList<>();
+    }
 }

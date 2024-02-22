@@ -18,6 +18,7 @@ public class BeanOne implements InjectNic {
     @Value("Colombo, Sri Lanka")
     String address;
 
+    @Autowired
     public BeanOne(
             @Value("Jayasekara") String name,
             @Value("20") int age,
@@ -26,7 +27,8 @@ public class BeanOne implements InjectNic {
             @Value("10,20,30,40") int[] marks,
             @Value("A") char x,
             @Value("1,2,3,4,5") List<String> list,
-            @Value("1,2,3,4,2,") Set<String> set
+            @Value("1,2,3,4,2,") Set<String> set,
+            ArrayList<String> arrayList
     ) {
         System.out.println("BeanOne Constructor !");
         System.out.println("Name : " + name);
@@ -36,7 +38,8 @@ public class BeanOne implements InjectNic {
         System.out.println("Marks : " + Arrays.toString(marks));
         System.out.println("X : " + x);
         System.out.println("List : " + list);
-        System.out.println("Set : " + set);
+        System.out.println("Set : " + set.toString());
+        System.out.println("ArrayList : " + arrayList);
         int y = x;
         System.out.println("Y : " + y);
         System.out.println("Address : " + address); // prints null , because the address is not after the property set
