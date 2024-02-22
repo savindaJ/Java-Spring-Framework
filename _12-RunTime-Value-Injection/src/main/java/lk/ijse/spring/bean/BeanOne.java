@@ -19,7 +19,7 @@ public class BeanOne implements InjectNic{
         System.out.println("BeanOne Constructor !");
         System.out.println("Name : " + name);
         System.out.println("Age : " + age);
-        System.out.println("Address : " + address);
+        System.out.println("Address : " + address); // prints null , because the address is not after the property set
     }
 
     @Autowired
