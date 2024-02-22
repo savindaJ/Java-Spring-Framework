@@ -1,7 +1,9 @@
 package lk.ijse.spring.bean;
 
 import org.apache.commons.dbcp2.BasicDataSource;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
@@ -29,6 +31,7 @@ public class BeanTwo {
     }
 
     @Bean
+//    @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
     public BasicDataSource dataSource() {
         System.out.println("Basic Datasource Instantiated");
         BasicDataSource dataSource = new BasicDataSource();
