@@ -14,6 +14,7 @@
         <module name="_06-Bean-Life-Cycle" />
         <module name="_02-XML-Config" />
         <module name="_01-Hello-Spring" />
+        <module name="_11-Spring-Configuration" />
         <module name="_08-Dipendency-injection-02" />
         <module name="_09-Spring-FullMode" />
       </profile>
