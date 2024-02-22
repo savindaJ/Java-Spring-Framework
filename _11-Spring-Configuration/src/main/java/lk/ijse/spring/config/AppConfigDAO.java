@@ -2,6 +2,7 @@ package lk.ijse.spring.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 
 /**
  * @author : savindaJ
@@ -9,9 +10,9 @@ import org.springframework.context.annotation.Configuration;
  * @since : 0.1.0
  **/
 @Configuration
-@ComponentScan("lk.ijse.spring.bean")
-public class AppConfigOne {
-    public AppConfigOne() {
+@ComponentScan("lk.ijse.spring.dao")
+public class AppConfigDAO {
+    public AppConfigDAO() {
         System.out.println("AppConfigOne Instantiated");
     }
 }

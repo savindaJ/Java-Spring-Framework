@@ -1,11 +1,7 @@
 package lk.ijse.spring;
 
-import lk.ijse.spring.config.AppConfigOne;
-import org.springframework.beans.factory.annotation.Autowired;
+import lk.ijse.spring.config.AppConfigRoot;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.stereotype.Component;
-
-import java.util.Arrays;
 
 /**
  * @author : savindaJ
@@ -15,7 +11,7 @@ import java.util.Arrays;
 public class AppInitializer {
     public static void main(String[] args) {
         var ctx = new AnnotationConfigApplicationContext();
-        ctx.register(AppConfigOne.class);
+        ctx.register(AppConfigRoot.class);
         ctx.refresh();
         ctx.registerShutdownHook();
     }

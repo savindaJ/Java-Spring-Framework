@@ -1,5 +1,6 @@
 package lk.ijse.spring.bean;
 
+import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Component;
 
 /**
@@ -9,8 +10,8 @@ import org.springframework.stereotype.Component;
  **/
 
 @Component
-public class BeanOne {
-    public BeanOne() {
+public class AnnotationConfigBean {
+    public AnnotationConfigBean() {
         System.out.println("BeanOne Instantiated");
     }
 }
