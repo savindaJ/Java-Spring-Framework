@@ -1,5 +1,6 @@
 package lk.ijse.spring;
 
+import lk.ijse.spring.bean.BeanOne;
 import lk.ijse.spring.config.AppConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -23,5 +24,7 @@ public class AppInitializerEnv {
         ctx.register(AppConfig.class);
         ctx.refresh();
         ctx.registerShutdownHook();
+        BeanOne bean = ctx.getBean(BeanOne.class);
+        bean.getEnvironmentVariable();
     }
 }

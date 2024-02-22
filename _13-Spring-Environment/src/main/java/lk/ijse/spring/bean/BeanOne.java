@@ -2,6 +2,7 @@ package lk.ijse.spring.bean;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,11 +13,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class BeanOne {
 
-    String url;
+    private String url;
 
-    String user;
+    private String user;
 
-    String password;
+    private String password;
+
+    @Autowired
+    Environment environment;
 
     public BeanOne(
             @Value("${db.url}") String url,
@@ -39,13 +43,35 @@ public class BeanOne {
             @Value("${spring.baseurl}") String baseUrl,
             @Value("${spring.datasource.url}") String datasourceUrl,
             @Value("${spring.datasource.username}") String username,
-            @Value("${spring.datasource.password}") String password
+            @Value("${spring.datasource.password}") String password,
+            @Value("${spring.datasource.main}") String mainDatasource
     ) {
         System.out.println("=====================================");
         System.out.println("resource file base url : " + baseUrl);
         System.out.println("resource file data source url : " + datasourceUrl);
         System.out.println("resource file user name : " + username);
         System.out.println("resource file user password : " + password);
+        System.out.println("resource file main data source : " + mainDatasource); // return basic value String !
+    }
+
+    public void getEnvironmentVariable() {
+        // creat get method to get environment variable , Why after property set to get this environment variable
+        System.out.println("=====================================");
+        System.out.println("get environment variable from environment object");
+        System.out.println("Environment Variable : " + environment.getProperty("spring.datasource.password"));
+        System.out.println("Environment Variable : " + environment.getProperty("spring.datasource.url"));
+        System.out.println("Environment Variable : " + environment.getProperty("spring.datasource.username"));
+        System.out.println("Environment Variable : " + environment.getProperty("spring.baseurl"));
+        System.out.println("Environment Variable : " + environment.getProperty("os.name"));
+    }
+
+    @Autowired
+    public void getAllObject(Object[] all) {
+        System.out.println("=====================================");
+        System.out.println("get all object from context");
+        for (Object o : all) {
+            System.out.println("context obj -> " + o.toString());
+        }
     }
 
 }
