@@ -1,5 +1,6 @@
 package lk.ijse.spring;
 
+import lk.ijse.spring.bean.BeanOne;
 import lk.ijse.spring.config.AppRootConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -14,5 +15,8 @@ public class AppInitializer {
         ctx.register(AppRootConfig.class);
         ctx.registerShutdownHook();
         ctx.refresh();
+
+        BeanOne bean = ctx.getBean(BeanOne.class);
+        System.out.println("Address : get by After property set : "+bean.getAddress());
     }
 }

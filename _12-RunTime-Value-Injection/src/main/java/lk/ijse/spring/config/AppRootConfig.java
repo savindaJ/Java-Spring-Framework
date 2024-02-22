@@ -4,6 +4,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import java.sql.Connection;
+
 /**
  * @author : savindaJ
  * @date : 2024-02-22
@@ -16,8 +18,11 @@ public class AppRootConfig {
         System.out.println("AppRootConfig Instantiated");
     }
 
+    Connection connection;
+
     @Bean
     public String name() {
         return "kamal";
     }
+
 }
