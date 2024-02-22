@@ -1,5 +1,6 @@
 package lk.ijse.spring.bean;
 
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
@@ -17,6 +18,21 @@ public class BeanTwo {
 
     @Bean
     public BeanOne getBeanOne() {
-        return new BeanOne();
+        // not support inter bean dependency
+        BeanOne beanOne = new BeanOne();
+        beanOne.setBasicDataSource(dataSource());
+        return beanOne;
+    }
+
+    @Bean
+    public BasicDataSource dataSource() {
+        System.out.println("Basic Datasource Instantiated");
+        BasicDataSource dataSource = new BasicDataSource();
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/web_test");
+        dataSource.setUsername("root");
+        dataSource.setPassword("80221474");
+        System.out.println("created data source :"+dataSource);
+        return dataSource;
     }
 }

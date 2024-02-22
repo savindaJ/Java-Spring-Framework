@@ -1,5 +1,6 @@
 package lk.ijse.spring.bean;
 
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.stereotype.Component;
 
 /**
@@ -9,6 +10,17 @@ import org.springframework.stereotype.Component;
  **/
 //@Component
 public class BeanOne {
+
+    private BasicDataSource basicDataSource;
+
+    public BasicDataSource getBasicDataSource() {
+        return basicDataSource;
+    }
+
+    public void setBasicDataSource(BasicDataSource basicDataSource) {
+        this.basicDataSource = basicDataSource;
+    }
+
     public BeanOne() {
         System.out.println("BeanOne Instantiated");
     }

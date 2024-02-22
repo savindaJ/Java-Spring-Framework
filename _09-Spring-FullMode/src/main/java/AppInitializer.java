@@ -11,5 +11,6 @@ public class AppInitializer {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
         ctx.register(FullModeConfig.class);
         ctx.refresh();
+        ctx.registerShutdownHook();
     }
 }

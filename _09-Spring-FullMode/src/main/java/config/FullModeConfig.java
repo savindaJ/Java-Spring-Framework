@@ -3,9 +3,6 @@ package config;
 import bean.BeanOne;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 
 /**
  * @author : savindaJ
@@ -23,13 +20,17 @@ public class FullModeConfig {
 
     @Bean
     public BeanOne beanOne() {
-        return new BeanOne();
+        BeanOne beanOne = new BeanOne();
+        //  usage of inter bean dependency
+        beanOne.setBasicDataSource(getDataSource());
+        return beanOne;
     }
 
 
     @Bean
-    public BasicDataSource dataSource() {
+    public BasicDataSource getDataSource() {
         System.out.println("Basic Datasource Instantiated");
+
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/web_test");

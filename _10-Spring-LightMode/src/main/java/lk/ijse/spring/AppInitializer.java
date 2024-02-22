@@ -1,6 +1,7 @@
 package lk.ijse.spring;
 
 import lk.ijse.spring.config.LightModeConfig;
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -13,5 +14,8 @@ public class AppInitializer {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
         ctx.register(LightModeConfig.class);
         ctx.refresh();
+
+        BasicDataSource dataSource = (BasicDataSource) ctx.getBean("dataSource");
+        System.out.println(dataSource);
     }
 }
