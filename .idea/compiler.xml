@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="_03-Annotation" />
         <module name="_06-Bean-Life-Cycle" />
+        <module name="_14-Constructor-Resolution-Algoritham" />
         <module name="_02-XML-Config" />
         <module name="_13-Spring-Environment" />
         <module name="_08-Dipendency-injection-02" />

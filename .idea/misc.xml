@@ -19,6 +19,7 @@
         <option value="$PROJECT_DIR$/_11-Spring-Configuration/pom.xml" />
         <option value="$PROJECT_DIR$/_12-RunTime-Value-Injection/pom.xml" />
         <option value="$PROJECT_DIR$/_13-Spring-Environment/pom.xml" />
+        <option value="$PROJECT_DIR$/_14-Constructor-Resolution-Algoritham/pom.xml" />
       </list>
     </option>
   </component>
