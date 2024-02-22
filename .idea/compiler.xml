@@ -10,10 +10,12 @@
         <module name="_03-Annotation" />
         <module name="_04-Bean-Definition" />
         <module name="_05-Bean-Scope" />
+        <module name="_10-Spring-LightMode" />
         <module name="_06-Bean-Life-Cycle" />
         <module name="_02-XML-Config" />
         <module name="_01-Hello-Spring" />
         <module name="_08-Dipendency-injection-02" />
+        <module name="_09-Spring-FullMode" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
