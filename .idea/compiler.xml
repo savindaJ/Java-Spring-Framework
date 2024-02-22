@@ -17,6 +17,7 @@
         <module name="_11-Spring-Configuration" />
         <module name="_08-Dipendency-injection-02" />
         <module name="_09-Spring-FullMode" />
+        <module name="_12-RunTime-Value-Injection" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
