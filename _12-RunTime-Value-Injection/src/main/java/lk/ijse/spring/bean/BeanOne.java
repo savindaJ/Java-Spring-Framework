@@ -1,11 +1,11 @@
 package lk.ijse.spring.bean;
 
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * @author : savindaJ
@@ -24,7 +24,9 @@ public class BeanOne implements InjectNic {
             @Value("25000.90") double salary,
             @Value("true") boolean isEmployed,
             @Value("10,20,30,40") int[] marks,
-            @Value("A") char x
+            @Value("A") char x,
+            @Value("1,2,3,4,5") List<String> list,
+            @Value("1,2,3,4,2,") Set<String> set
     ) {
         System.out.println("BeanOne Constructor !");
         System.out.println("Name : " + name);
@@ -33,7 +35,9 @@ public class BeanOne implements InjectNic {
         System.out.println("Employed : " + isEmployed);
         System.out.println("Marks : " + Arrays.toString(marks));
         System.out.println("X : " + x);
-        int y  = x;
+        System.out.println("List : " + list);
+        System.out.println("Set : " + set);
+        int y = x;
         System.out.println("Y : " + y);
         System.out.println("Address : " + address); // prints null , because the address is not after the property set
     }

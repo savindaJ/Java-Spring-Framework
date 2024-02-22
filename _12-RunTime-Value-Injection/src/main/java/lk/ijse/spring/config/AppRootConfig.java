@@ -5,6 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 
 /**
  * @author : savindaJ
@@ -19,10 +20,4 @@ public class AppRootConfig {
     }
 
     Connection connection;
-
-    @Bean
-    public String name() {
-        return "kamal";
-    }
-
 }
