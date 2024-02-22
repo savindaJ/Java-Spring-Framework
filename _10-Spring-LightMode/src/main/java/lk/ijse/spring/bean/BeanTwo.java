@@ -20,7 +20,11 @@ public class BeanTwo {
     public BeanOne getBeanOne() {
         // not support inter bean dependency
         BeanOne beanOne = new BeanOne();
-        beanOne.setBasicDataSource(dataSource());
+        dataSource(); // return new data source and new memory location org.apache.commons.dbcp2.BasicDataSource@4145bad8
+        dataSource(); // return new data source and new memory location org.apache.commons.dbcp2.BasicDataSource@d86a6f
+        dataSource(); // return new data source and new memory location org.apache.commons.dbcp2.BasicDataSource@2892d68
+        dataSource(); // return new data source and new memory location org.apache.commons.dbcp2.BasicDataSource@750e2b97
+        beanOne.setBasicDataSource(dataSource()); // org.apache.commons.dbcp2.BasicDataSource@3c77d488
         return beanOne;
     }
 
@@ -33,6 +37,6 @@ public class BeanTwo {
         dataSource.setUsername("root");
         dataSource.setPassword("80221474");
         System.out.println("created data source :"+dataSource);
-        return dataSource;
+        return dataSource; // org.apache.commons.dbcp2.BasicDataSource@750e2b97
     }
 }

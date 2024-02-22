@@ -16,6 +16,6 @@ public class AppInitializer {
         ctx.refresh();
 
         BasicDataSource dataSource = (BasicDataSource) ctx.getBean("dataSource");
-        System.out.println(dataSource);
+        System.out.println(dataSource); //org.apache.commons.dbcp2.BasicDataSource@750e2b97
     }
 }

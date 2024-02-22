@@ -3,6 +3,7 @@ package config;
 import bean.BeanOne;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * @author : savindaJ
@@ -10,7 +11,7 @@ import org.springframework.context.annotation.Bean;
  * @since : 0.1.0
  **/
 /*Full mode*/
-//@Configuration
+@Configuration
 //@ComponentScan("bean")
 public class FullModeConfig {
 
@@ -22,6 +23,13 @@ public class FullModeConfig {
     public BeanOne beanOne() {
         BeanOne beanOne = new BeanOne();
         //  usage of inter bean dependency
+        getDataSource(); // return single instance of data source
+        getDataSource(); // return single instance of data source
+        getDataSource(); // return single instance of data source
+        getDataSource(); // return single instance of data source
+        getDataSource(); // return single instance of data source
+        getDataSource(); // return single instance of data source
+        getDataSource(); // return single instance of data source
         beanOne.setBasicDataSource(getDataSource());
         return beanOne;
     }
@@ -36,6 +44,7 @@ public class FullModeConfig {
         dataSource.setUrl("jdbc:mysql://localhost:3306/web_test");
         dataSource.setUsername("root");
         dataSource.setPassword("80221474");
+        System.out.println("created data source :"+dataSource);
         return dataSource;
     }
 }
