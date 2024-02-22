@@ -13,7 +13,8 @@ import org.springframework.context.annotation.ImportResource;
 @Configuration
 @ComponentScan("lk.ijse.spring.bean")
 @ImportResource("classpath:spring.xml")
-@Import({AppConfigDAO.class , AppConfigBO.class}) // sey register my other config classes
+@Import({AppConfigDAO.class , AppConfigBO.class}) // sey register my other config classes , AppConfigDAO and AppConfigBO
+// this annotation can be used to import other config classes this config class is used to import other config classes
 public class AppConfigRoot {
     public AppConfigRoot() {
         System.out.println("AppConfigTwo Instantiated");
