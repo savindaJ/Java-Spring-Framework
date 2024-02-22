@@ -23,7 +23,8 @@ public class BeanOne implements InjectNic {
             @Value("20") int age,
             @Value("25000.90") double salary,
             @Value("true") boolean isEmployed,
-            @Value("10,20,30,40") int[] marks
+            @Value("10,20,30,40") int[] marks,
+            @Value("A") char x
     ) {
         System.out.println("BeanOne Constructor !");
         System.out.println("Name : " + name);
@@ -31,6 +32,9 @@ public class BeanOne implements InjectNic {
         System.out.println("Salary : " + salary);
         System.out.println("Employed : " + isEmployed);
         System.out.println("Marks : " + Arrays.toString(marks));
+        System.out.println("X : " + x);
+        int y  = x;
+        System.out.println("Y : " + y);
         System.out.println("Address : " + address); // prints null , because the address is not after the property set
     }
 
