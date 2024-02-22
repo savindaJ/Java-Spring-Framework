@@ -14,7 +14,7 @@ import java.util.Arrays;
  **/
 public class AppInitializer {
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+        var ctx = new AnnotationConfigApplicationContext();
         ctx.register(AppConfigOne.class);
         ctx.refresh();
         ctx.registerShutdownHook();
