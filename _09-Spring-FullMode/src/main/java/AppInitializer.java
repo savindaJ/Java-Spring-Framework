@@ -1,3 +1,4 @@
+import bean.BeanOne;
 import config.FullModeConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -12,5 +13,13 @@ public class AppInitializer {
         ctx.register(FullModeConfig.class);
         ctx.refresh();
         ctx.registerShutdownHook();
+
+        BeanOne bean = ctx.getBean(BeanOne.class);
+        System.out.println("bean one reference"+ bean);
+        System.out.println(bean.getBasicDataSource());
+
+        BeanOne bean2 = ctx.getBean(BeanOne.class);
+        System.out.println("bean two reference"+ bean2);
+        System.out.println(bean2.getBasicDataSource());
     }
 }

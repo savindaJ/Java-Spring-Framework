@@ -55,4 +55,8 @@ public class BeanOne implements BeanNameAware, BeanFactoryAware, ApplicationCont
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 
     }
+
+    public BasicDataSource getBasicDataSource() {
+        return basicDataSource;
+    }
 }
