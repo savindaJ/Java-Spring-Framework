@@ -13,12 +13,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class BeanOne {
 
-    private String url;
-
-    private String user;
-
-    private String password;
-
     @Autowired
     Environment environment;
 
@@ -28,9 +22,6 @@ public class BeanOne {
             @Value("${db.password}") String password,
             @Value("${os.name}") String osName
     ) {
-        this.url = url;
-        this.user = user;
-        this.password = password;
         System.out.println("BeanOne Instantiated");
         System.out.println("URL : " + url);
         System.out.println("User : " + user);
@@ -63,6 +54,13 @@ public class BeanOne {
         System.out.println("Environment Variable : " + environment.getProperty("spring.datasource.username"));
         System.out.println("Environment Variable : " + environment.getProperty("spring.baseurl"));
         System.out.println("Environment Variable : " + environment.getProperty("os.name"));
+        System.out.println("Environment Variable : " + environment.getProperty("os.kamal")); // return null
+
+        try {
+            System.out.println("Environment Variable : " + environment.getRequiredProperty("os.kamal")); // throw exception
+        }catch (Exception e) {
+            System.out.println("Throw Exception - get wrong key value "+e.getLocalizedMessage()); // thrown exception handle
+        }
     }
 
     @Autowired
