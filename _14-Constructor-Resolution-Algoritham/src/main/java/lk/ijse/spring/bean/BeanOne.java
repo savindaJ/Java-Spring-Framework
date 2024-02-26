@@ -15,12 +15,11 @@ public class BeanOne {
         System.out.println("BeanOne no args Instantiated");
     }
 
-    @Autowired
+    @Autowired(required = false)
     public BeanOne(@Value("kamal") String name,@Value("matara") String address){
         System.out.println("BeanOne all args Instantiated");
     }
 
-//    @Autowired
     public BeanOne(@Value("kamal") String name){
         System.out.println("BeanOne single args Instantiated");
     }
