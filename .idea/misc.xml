@@ -19,6 +19,7 @@
         <option value="$PROJECT_DIR$/_03-Annotation/pom.xml" />
         <option value="$PROJECT_DIR$/_02-XML-Config/pom.xml" />
         <option value="$PROJECT_DIR$/_01-Hello-Spring/pom.xml" />
+        <option value="$PROJECT_DIR$/_16-ControllerVsRestController/pom.xml" />
       </list>
     </option>
   </component>

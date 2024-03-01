@@ -11,6 +11,7 @@
         <module name="_06-Bean-Life-Cycle" />
         <module name="_14-Constructor-Resolution-Algoritham" />
         <module name="_02-XML-Config" />
+        <module name="_16-Controller-Vs-RestController" />
         <module name="_13-Spring-Environment" />
         <module name="_08-Dipendency-injection-02" />
         <module name="_12-RunTime-Value-Injection" />
