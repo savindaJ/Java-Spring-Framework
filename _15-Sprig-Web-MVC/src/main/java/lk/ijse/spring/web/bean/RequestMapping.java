@@ -1,5 +1,6 @@
 package lk.ijse.spring.web.bean;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -11,9 +12,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class RequestMapping {
     @GetMapping
-    public String Get(){
+    public String Get(HttpServletRequest request){
         System.out.println("get mapping called !");
-        return "<h1>Hello Spring using Request Mapping Get</h1>";
+        return "<h1>Hello Spring using Request Mapping Get : URI +</h1>"+request.getRequestURI();
     }
 
     @PostMapping
