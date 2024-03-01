@@ -4,7 +4,12 @@ import lk.ijse.spring.web.api.Controller;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 /**
  * @author : savindaJ
@@ -14,7 +19,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 @ComponentScan(basePackages = {"lk.ijse.spring.web.api"})
 @EnableWebMvc
-public class WebAppConfig {
+public class WebAppConfig implements WebMvcConfigurer { // this is the configuration class for the web application
     public WebAppConfig() {
         System.out.println("WebAppConfig Created");
     }
@@ -22,5 +27,18 @@ public class WebAppConfig {
     @Bean
     public Controller setController(){
         return new Controller();
+    }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/WEB-INF/page/**").addResourceLocations("/WEB-INF/page/");
+    }
+
+    @Bean
+    public ViewResolver render(){
+        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+        resolver.setPrefix("/WEB-INF/page/"); // this is the location of the jsp files
+        resolver.setSuffix(".html"); // this is the extension of the jsp files
+        return resolver;
     }
 }
