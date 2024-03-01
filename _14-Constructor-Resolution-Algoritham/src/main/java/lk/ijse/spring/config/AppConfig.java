@@ -1,5 +1,7 @@
 package lk.ijse.spring.config;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,5 +15,21 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
     public AppConfig() {
         System.out.println("AppConfig Instantiated");
+    }
+
+    @Bean
+    public String setString(){
+        return "my String !";
+    }
+
+    @Bean
+    public Integer setInteger(){
+        return 10;
+    }
+
+    @Bean
+    @Qualifier("myDouble")
+    public Double setDouble(){
+        return 10.0;
     }
 }
