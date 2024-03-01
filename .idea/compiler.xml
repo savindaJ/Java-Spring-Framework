@@ -6,7 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="_11-Spring-Configuration" />
+        <module name="_13-Spring-Environment" />
         <module name="_14-Constructor-Resolution-Algoritham" />
+        <module name="_12-RunTime-Value-Injection" />
       </profile>
     </annotationProcessing>
   </component>

@@ -5,6 +5,10 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/_14-Constructor-Resolution-Algoritham/pom.xml" />
+        <option value="$PROJECT_DIR$/_13-Spring-Environment/pom.xml" />
+        <option value="$PROJECT_DIR$/_12-RunTime-Value-Injection/pom.xml" />
+        <option value="$PROJECT_DIR$/_11-Spring-Configuration/pom.xml" />
+        <option value="$PROJECT_DIR$/_15-Sprig-Web-MVC/pom.xml" />
       </list>
     </option>
   </component>
