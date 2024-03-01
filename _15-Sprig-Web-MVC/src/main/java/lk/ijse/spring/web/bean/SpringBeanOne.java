@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @date : 2024-03-01
  * @since : 0.1.0
  **/
-@Component
+//@Component
 public class SpringBeanOne implements BeanNameAware, BeanFactoryAware, ApplicationContextAware, InitializingBean, DisposableBean {
     public SpringBeanOne() {
         System.out.println("SpringBeanOne Instantiated");
