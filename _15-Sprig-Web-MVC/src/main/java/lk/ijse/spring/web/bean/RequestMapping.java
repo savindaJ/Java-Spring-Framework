@@ -22,6 +22,12 @@ public class RequestMapping {
         return "<h1>Hello Spring using Post</h1>";
     }
 
+    @PostMapping("/two")
+    public String PostMappingTwo(){
+        System.out.println("post mapping called !");
+        return "<h1>Hello Spring using Post Mapping Two !</h1>";
+    }
+
     @PutMapping
     public String Put(){
         System.out.println("put mapping called !");
