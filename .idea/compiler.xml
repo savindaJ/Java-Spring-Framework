@@ -19,6 +19,7 @@
         <module name="_05-Bean-Scope" />
         <module name="_04-Bean-Definition" />
         <module name="_10-Spring-LightMode" />
+        <module name="_17-Spring-web-Crud" />
         <module name="_11-Spring-Configuration" />
         <module name="_01-Hello-Spring" />
         <module name="_09-Spring-FullMode" />

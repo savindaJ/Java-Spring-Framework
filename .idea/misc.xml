@@ -20,6 +20,8 @@
         <option value="$PROJECT_DIR$/_02-XML-Config/pom.xml" />
         <option value="$PROJECT_DIR$/_01-Hello-Spring/pom.xml" />
         <option value="$PROJECT_DIR$/_16-ControllerVsRestController/pom.xml" />
+        <option value="$PROJECT_DIR$/_17-Spring-web-Crud/pom.xml" />
+        <option value="$PROJECT_DIR$/_16-Controller-Vs-RestController/pom.xml" />
       </list>
     </option>
   </component>
