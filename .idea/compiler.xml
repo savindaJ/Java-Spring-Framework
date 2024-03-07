@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="_03-Annotation" />
+        <module name="_18-Mapping-Spec" />
         <module name="_15-Sprig-Web-MVC" />
         <module name="_06-Bean-Life-Cycle" />
         <module name="_14-Constructor-Resolution-Algoritham" />
