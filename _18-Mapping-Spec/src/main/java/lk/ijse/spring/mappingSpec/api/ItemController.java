@@ -30,7 +30,11 @@ public class ItemController {
         return "Request value is FormUrlEncoded";
     }
 
-    @PostMapping(path = "/type",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PostMapping(
+            path = "/type",
+            consumes = MediaType.MULTIPART_FORM_DATA_VALUE ,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
     public String getMultipartFormDataRequestBody() {
         return "Request value is MultipartFormData";
     }
