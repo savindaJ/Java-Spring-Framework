@@ -32,8 +32,8 @@ public class ItemController {
 
     @PostMapping(
             path = "/type",
-            consumes = MediaType.MULTIPART_FORM_DATA_VALUE ,
-            produces = MediaType.APPLICATION_JSON_VALUE
+            consumes = MediaType.MULTIPART_FORM_DATA_VALUE , // consume type request type
+            produces = MediaType.APPLICATION_JSON_VALUE // produce type response type
     )
     public String getMultipartFormDataRequestBody() {
         return "Request value is MultipartFormData";
