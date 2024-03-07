@@ -1,5 +1,6 @@
 package lk.ijse.spring.mappingSpec.api;
 
+import lk.ijse.spring.mappingSpec.dto.Customer;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,22 +15,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/item")
 public class ItemController {
 
-    @PostMapping(path = "/json" ,consumes = MediaType.APPLICATION_JSON_VALUE)
-    public String getJsonRequestBody() {
-        return "Request value is Json";
+    @PostMapping(path = "/type" ,consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Customer getJsonRequestBody() {
+        return new Customer("C001","Savinda","Colombo","0771234567");
     }
 
-    @PostMapping(path = "/xml",consumes = MediaType.APPLICATION_XML_VALUE)
+    @PostMapping(path = "/type",consumes = MediaType.APPLICATION_XML_VALUE)
     public String getXmlRequestBody() {
         return "Request value is XML";
     }
 
-    @PostMapping(path = "/unlencode",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @PostMapping(path = "/type",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public String getFormUrlEncodedRequestBody() {
         return "Request value is FormUrlEncoded";
     }
 
-    @PostMapping(path = "/form",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PostMapping(path = "/type",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public String getMultipartFormDataRequestBody() {
         return "Request value is MultipartFormData";
     }
