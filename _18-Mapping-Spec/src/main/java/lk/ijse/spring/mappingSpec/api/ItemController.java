@@ -3,6 +3,7 @@ package lk.ijse.spring.mappingSpec.api;
 import lk.ijse.spring.mappingSpec.dto.Customer;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,5 +38,10 @@ public class ItemController {
     )
     public String getMultipartFormDataRequestBody() {
         return "Request value is MultipartFormData";
+    }
+
+    @PostMapping(headers = "Content-Type=application/json",path = "/header",produces = MediaType.APPLICATION_JSON_VALUE)
+    public String getHeader(@RequestHeader("Accept-Encoding") String Content_Type) {
+        return "Request value is Header"+Content_Type;
     }
 }
