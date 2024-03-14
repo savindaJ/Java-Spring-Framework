@@ -4,26 +4,26 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>_18-Mapping-Spec</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>org.example</groupId> <!--package name concision-->
+    <artifactId>_18-Mapping-Spec</artifactId> <!--final artifact name !-->
+    <version>1.0-SNAPSHOT</version> <!--artifact version !-->
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.source>17</maven.compiler.source> <!--by using java version ! / remove default java 1.5-->
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <packaging>war</packaging>
+    <packaging>war</packaging> <!--final artifact type-->
 
-    <dependencies>
+    <dependencies> <!--dependencies-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>6.1.3</version>
         </dependency>
 
-        <dependency>
+        <dependency> <!--servlet api dependency-->
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
             <version>6.0.0</version>
