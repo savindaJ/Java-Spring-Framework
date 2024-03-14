@@ -70,6 +70,5 @@ public class RequestValueController {
         customers.add(new Customer("C004", "nimal jayasekara", "kandy", "200000"));
         return customers;
 //        return "{\"id\":\"" + customer.getId() + "\",\"name\":\"" + customer.getName() + "\",\"address\":\"" + customer.getAddress() + "\",\"salary\":\"" + customer.getSalary() + "\"}";
-
     }
 }

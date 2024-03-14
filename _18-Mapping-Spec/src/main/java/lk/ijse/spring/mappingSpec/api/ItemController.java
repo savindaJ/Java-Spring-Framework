@@ -42,6 +42,11 @@ public class ItemController {
 
     @PostMapping(headers = "Content-Type=application/json",path = "/header",produces = MediaType.APPLICATION_JSON_VALUE)
     public String getHeader(@RequestHeader("Accept-Encoding") String Content_Type) {
-        return "Request value is Header"+Content_Type;
+        return "Request value is Header: "+Content_Type;
+    }
+
+    @PostMapping(headers = {"Content-Type=application/json","application/xml"},path = "/header",produces = MediaType.APPLICATION_JSON_VALUE)
+    public String getManyHeader(@RequestHeader("Accept-Encoding") String Content_Type) {
+        return "Request value is many content type Header"+Content_Type;
     }
 }
