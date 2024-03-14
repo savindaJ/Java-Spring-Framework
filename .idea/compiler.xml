@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -14,6 +15,7 @@
         <module name="_02-XML-Config" />
         <module name="_16-Controller-Vs-RestController" />
         <module name="_13-Spring-Environment" />
+        <module name="_19-Spring-web-Project" />
         <module name="_08-Dipendency-injection-02" />
         <module name="_12-RunTime-Value-Injection" />
         <module name="_07-Dependency-Injection" />
