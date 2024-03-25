@@ -19,18 +19,17 @@ import java.util.List;
 @RestController
 @RequestMapping("/customer")
 public class CustomerController {
-    private final ResponseMessage responseMessage;
     private final CustomerService customerService;
 
     @Autowired
-    public CustomerController(ResponseMessage responseMessage, CustomerService customerService) {
-        this.responseMessage = responseMessage;
+    public CustomerController(CustomerService customerService) {
         this.customerService = customerService;
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(code = HttpStatus.OK)
     public ResponseMessage getAllCustomers() {
+        ResponseMessage responseMessage = new ResponseMessage();
         List<CustomerDTO> allCustomers = customerService.getAllCustomers();
         responseMessage.setData(allCustomers);
         return responseMessage;
@@ -39,6 +38,7 @@ public class CustomerController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(code = HttpStatus.CREATED)
     public ResponseMessage saveCustomer(@RequestBody CustomerDTO customerDTO) {
+        ResponseMessage responseMessage = new ResponseMessage();
         boolean b = customerService.saveCustomer(customerDTO);
         if (b)
             responseMessage.setCode(201);
@@ -50,6 +50,7 @@ public class CustomerController {
     @PutMapping
     @ResponseStatus(code = HttpStatus.OK)
     public ResponseMessage updateCustomer(@RequestBody CustomerDTO customerDTO) {
+        ResponseMessage responseMessage = new ResponseMessage();
         boolean b = customerService.updateCustomer(customerDTO);
         if (b)
             responseMessage.setCode(400);
@@ -60,6 +61,7 @@ public class CustomerController {
     @DeleteMapping
     @ResponseStatus(code = HttpStatus.OK)
     public ResponseMessage deleteCustomer(@RequestParam("id") String id) {
+        ResponseMessage responseMessage = new ResponseMessage();
         boolean b = customerService.deleteCustomer(id);
         if (b)
             responseMessage.setCode(400);
