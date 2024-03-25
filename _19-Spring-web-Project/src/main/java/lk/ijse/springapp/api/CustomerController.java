@@ -1,12 +1,14 @@
 package lk.ijse.springapp.api;
 
 import lk.ijse.springapp.dto.CustomerDTO;
+import lk.ijse.springapp.service.CustomerService;
 import lk.ijse.springapp.util.ResponseMessage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author : savindaJ
@@ -18,43 +20,27 @@ import java.util.ArrayList;
 @RequestMapping("/customer")
 public class CustomerController {
     private final ResponseMessage responseMessage;
+    private final CustomerService customerService;
 
     @Autowired
-    public CustomerController(ResponseMessage responseMessage) {
+    public CustomerController(ResponseMessage responseMessage, CustomerService customerService) {
         this.responseMessage = responseMessage;
-    }
-
-    private ArrayList<CustomerDTO> customerList = new ArrayList<>();
-
-    {
-        customerList.add(new CustomerDTO("C001","Savinda","Galle","100000"));
-        customerList.add(new CustomerDTO("C002","Kasun","Matara","200000"));
-        customerList.add(new CustomerDTO("C003","Nimal","Colombo","300000"));
-        customerList.add(new CustomerDTO("C004","Sunil","Kandy","400000"));
+        this.customerService = customerService;
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(code = HttpStatus.OK)
     public ResponseMessage getAllCustomers(){
-        responseMessage.setCode(200);
-        responseMessage.setMessage("All Customers are successfully retrieved");
-        responseMessage.setData(customerList);
+        List<CustomerDTO> allCustomers = customerService.getAllCustomers();
+        responseMessage.setData(allCustomers);
         return responseMessage;
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(code = HttpStatus.CREATED)
     public ResponseMessage saveCustomer(@RequestBody CustomerDTO customerDTO){
-        for (CustomerDTO customer : customerList) {
-            if (customer.getId().equals(customerDTO.getId())){
-                customer.setName(customerDTO.getName());
-                customer.setAddress(customerDTO.getAddress());
-                customer.setSalary(customerDTO.getSalary());
-                responseMessage.setCode(200);
-                responseMessage.setData(null);
-                responseMessage.setMessage("Customer is Already Exits in the System !");
-                return responseMessage;
-            }
-        }
-        customerList.add(customerDTO);
+        boolean b = customerService.saveCustomer(customerDTO);
+        if (b)
         responseMessage.setCode(201);
         responseMessage.setData(null);
         responseMessage.setMessage("Customer is successfully saved");
@@ -62,34 +48,20 @@ public class CustomerController {
     }
 
     @PutMapping
+    @ResponseStatus(code = HttpStatus.OK)
     public ResponseMessage updateCustomer(@RequestBody CustomerDTO customerDTO){
-        for (CustomerDTO customer : customerList) {
-            if (customer.getId().equals(customerDTO.getId())){
-                customer.setName(customerDTO.getName());
-                customer.setAddress(customerDTO.getAddress());
-                customer.setSalary(customerDTO.getSalary());
-                responseMessage.setCode(200);
-                responseMessage.setData(null);
-                responseMessage.setMessage("Customer is successfully updated");
-                return responseMessage;
-            }
-        }
+        boolean b = customerService.updateCustomer(customerDTO);
+        if(b)
         responseMessage.setCode(400);
         responseMessage.setMessage("Customer is not found");
         return responseMessage;
     }
 
     @DeleteMapping
+    @ResponseStatus(code = HttpStatus.OK)
     public ResponseMessage deleteCustomer(@RequestParam("id") String id){
-        for (CustomerDTO customerDTO : customerList) {
-            if (customerDTO.getId().equals(id)){
-                customerList.remove(customerDTO);
-                responseMessage.setCode(200);
-                responseMessage.setData(null);
-                responseMessage.setMessage("Customer is successfully deleted");
-                return responseMessage;
-            }
-        }
+        boolean b = customerService.deleteCustomer(id);
+        if(b)
         responseMessage.setCode(400);
         responseMessage.setMessage("Customer is not found");
         return responseMessage;
