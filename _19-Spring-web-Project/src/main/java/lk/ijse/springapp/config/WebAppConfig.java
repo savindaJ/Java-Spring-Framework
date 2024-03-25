@@ -1,7 +1,11 @@
 package lk.ijse.springapp.config;
 
+import lk.ijse.springapp.util.ObjTransformer;
+import org.modelmapper.ModelMapper;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
@@ -11,6 +15,12 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  **/
 @Configuration
 @EnableWebMvc
-@ComponentScan("lk.ijse.springapp.api")
+@ComponentScan(value = "lk.ijse.springapp.api",basePackageClasses = ObjTransformer.class)
+@Import({JpaConfig.class})
 public class WebAppConfig {
+
+    @Bean
+    public ModelMapper mapper(){
+        return new ModelMapper();
+    }
 }
