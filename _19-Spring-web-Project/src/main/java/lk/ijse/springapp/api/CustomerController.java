@@ -30,7 +30,7 @@ public class CustomerController {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(code = HttpStatus.OK)
-    public ResponseMessage getAllCustomers(){
+    public ResponseMessage getAllCustomers() {
         List<CustomerDTO> allCustomers = customerService.getAllCustomers();
         responseMessage.setData(allCustomers);
         return responseMessage;
@@ -38,10 +38,10 @@ public class CustomerController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(code = HttpStatus.CREATED)
-    public ResponseMessage saveCustomer(@RequestBody CustomerDTO customerDTO){
+    public ResponseMessage saveCustomer(@RequestBody CustomerDTO customerDTO) {
         boolean b = customerService.saveCustomer(customerDTO);
         if (b)
-        responseMessage.setCode(201);
+            responseMessage.setCode(201);
         responseMessage.setData(null);
         responseMessage.setMessage("Customer is successfully saved");
         return responseMessage;
@@ -49,20 +49,20 @@ public class CustomerController {
 
     @PutMapping
     @ResponseStatus(code = HttpStatus.OK)
-    public ResponseMessage updateCustomer(@RequestBody CustomerDTO customerDTO){
+    public ResponseMessage updateCustomer(@RequestBody CustomerDTO customerDTO) {
         boolean b = customerService.updateCustomer(customerDTO);
-        if(b)
-        responseMessage.setCode(400);
+        if (b)
+            responseMessage.setCode(400);
         responseMessage.setMessage("Customer is not found");
         return responseMessage;
     }
 
     @DeleteMapping
     @ResponseStatus(code = HttpStatus.OK)
-    public ResponseMessage deleteCustomer(@RequestParam("id") String id){
+    public ResponseMessage deleteCustomer(@RequestParam("id") String id) {
         boolean b = customerService.deleteCustomer(id);
-        if(b)
-        responseMessage.setCode(400);
+        if (b)
+            responseMessage.setCode(400);
         responseMessage.setMessage("Customer is not found");
         return responseMessage;
     }

@@ -9,6 +9,6 @@ import org.springframework.context.annotation.Configuration;
  * @since : 0.1.0
  **/
 @Configuration
-@ComponentScan("lk.ijse.springapp")
+@ComponentScan(basePackages = {"lk.ijse.springapp.service", "lk.ijse.springapp"})
 public class WebRootConfig {
 }
