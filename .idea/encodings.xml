@@ -37,5 +37,7 @@
     <file url="file://$PROJECT_DIR$/_18-Mapping-Spec/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/_19-Spring-web-Project/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/_19-Spring-web-Project/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/_21-Spring-Data-Jpa/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/_21-Spring-Data-Jpa/src/main/resources" charset="UTF-8" />
   </component>
 </project>

@@ -14,6 +14,7 @@
         <module name="_14-Constructor-Resolution-Algoritham" />
         <module name="_02-XML-Config" />
         <module name="_16-Controller-Vs-RestController" />
+        <module name="_21-Spring-Data-Jpa" />
         <module name="_13-Spring-Environment" />
         <module name="_19-Spring-web-Project" />
         <module name="_08-Dipendency-injection-02" />
