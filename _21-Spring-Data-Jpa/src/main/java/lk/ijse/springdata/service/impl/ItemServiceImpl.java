@@ -27,9 +27,9 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public boolean saveItem(ItemDTO itemDTO) {
+    public ItemDTO saveItem(ItemDTO itemDTO) {
         Item save = itemRepo.save(modelMapper.map(itemDTO, Item.class));
-        return save != null;
+        return modelMapper.map(save, ItemDTO.class);
     }
 
     @Override
@@ -46,10 +46,6 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public List<ItemDTO> getAllItems() {
-        List<ItemDTO> list = new ArrayList<>();
-        for (Item item : itemRepo.findAll()) {
-            list.add(modelMapper.map(item, ItemDTO.class));
-        }
-        return list;
+        return itemRepo.findAll().stream().map(item -> modelMapper.map(item, ItemDTO.class)).toList();
     }
 }

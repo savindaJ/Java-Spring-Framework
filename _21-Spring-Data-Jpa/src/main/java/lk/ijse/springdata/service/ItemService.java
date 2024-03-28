@@ -10,7 +10,7 @@ import java.util.List;
  * @since : 0.1.0
  **/
 public interface ItemService {
-    boolean saveItem(ItemDTO itemDTO);
+    ItemDTO saveItem(ItemDTO itemDTO);
 
     boolean updateItem(ItemDTO itemDTO);
 

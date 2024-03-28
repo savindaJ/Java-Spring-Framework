@@ -2,6 +2,7 @@ package lk.ijse.springdata.api;
 
 import lk.ijse.springdata.dto.ItemDTO;
 import lk.ijse.springdata.service.ItemService;
+import lk.ijse.springdata.util.GenerateID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,9 +26,9 @@ public class ItemController {
 
     @PostMapping
     public ResponseEntity<?> saveItem(@RequestBody ItemDTO itemDTO) {
-        System.out.println(itemDTO);
-        boolean isSaved = itemService.saveItem(itemDTO);
-        return isSaved ? ResponseEntity.ok("Item Saved") : ResponseEntity.ok("Item Not Saved");
+        itemDTO.setCode(GenerateID.generateID());
+        ItemDTO itemDTO1 = itemService.saveItem(itemDTO);
+        return itemDTO1!=null ? ResponseEntity.ok(itemDTO1) : ResponseEntity.ok("Item Not Saved");
     }
 
     @PutMapping
