@@ -34,12 +34,19 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public boolean updateItem(ItemDTO itemDTO) {
+        if (!itemRepo.existsById(itemDTO.getCode())) {
+            throw new RuntimeException("Item not found");
+        }
         Item save = itemRepo.save(modelMapper.map(itemDTO, Item.class));
         return save != null;
     }
 
     @Override
     public boolean deleteItem(String code) {
+        boolean existsById = itemRepo.existsById(code);
+        if (!existsById) {
+            throw new RuntimeException("Item not found");
+        }
         itemRepo.deleteById(code);
         return true;
     }
