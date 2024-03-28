@@ -33,6 +33,10 @@ public class ItemController {
         return itemDTO1!=null ? ResponseEntity.ok(itemDTO1) : ResponseEntity.ok("Item Not Saved");
     }
 
+    /**
+     * @param itemDTO ItemDTO
+     * @return ResponseEntity<?>
+     */
     @PutMapping
     public ResponseEntity<?> updateItem(@RequestBody @Valid ItemDTO itemDTO) {
         boolean isUpdated = itemService.updateItem(itemDTO);
