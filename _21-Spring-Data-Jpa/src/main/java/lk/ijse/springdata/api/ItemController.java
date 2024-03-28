@@ -14,6 +14,7 @@ import java.util.List;
  * @date : 2024-03-27
  * @since : 0.1.0
  **/
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/item")
 public class ItemController {

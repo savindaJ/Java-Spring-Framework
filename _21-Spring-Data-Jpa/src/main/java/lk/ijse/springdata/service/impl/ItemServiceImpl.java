@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * @author : savindaJ
@@ -53,6 +54,8 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public List<ItemDTO> getAllItems() {
+        Stream<Item> itemStream = itemRepo.findAll().stream().filter(item -> item.getQtyOnHand() > 5);
+        System.out.println("itemStream = " + itemStream.map(item -> modelMapper.map(item, ItemDTO.class)).toList());
         return itemRepo.findAll().stream().map(item -> modelMapper.map(item, ItemDTO.class)).toList();
     }
 }
