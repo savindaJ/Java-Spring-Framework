@@ -39,6 +39,7 @@ public class ItemController {
      */
     @PutMapping
     public ResponseEntity<?> updateItem(@RequestBody @Valid ItemDTO itemDTO) {
+        System.out.println("itemDTO = " + itemDTO);
         boolean isUpdated = itemService.updateItem(itemDTO);
         return isUpdated ? ResponseEntity.ok("Item Updated") : ResponseEntity.ok("Item Not Updated");
     }

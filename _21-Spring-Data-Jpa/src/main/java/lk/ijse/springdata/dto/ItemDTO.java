@@ -16,7 +16,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ItemDTO implements Serializable {
-    @Null(message = "Code should not be null") // can null only when saving
+    @NotNull(message = "Code should not be null") // can null only when saving
+//    @NotBlank(message = "Code should not be null") // can null only when saving
     private String code;
     @NotBlank(message = "Description should not be null")
     @Pattern(regexp = "^[A-Za-z0-9 ]+$", message = "Description should be a string")
