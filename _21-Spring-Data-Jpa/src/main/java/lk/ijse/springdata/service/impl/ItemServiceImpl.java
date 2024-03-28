@@ -20,7 +20,7 @@ import java.util.stream.Stream;
 public class ItemServiceImpl implements ItemService {
 
     private final ItemRepo itemRepo;
-    private ModelMapper modelMapper;
+    private final ModelMapper modelMapper;
 
     public ItemServiceImpl(ItemRepo itemRepo, ModelMapper modelMapper) {
         this.itemRepo = itemRepo;
@@ -54,8 +54,8 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public List<ItemDTO> getAllItems() {
-        Stream<Item> itemStream = itemRepo.findAll().stream().filter(item -> item.getQtyOnHand() > 5);
-        System.out.println("itemStream = " + itemStream.map(item -> modelMapper.map(item, ItemDTO.class)).toList());
+//        Stream<Item> itemStream = itemRepo.findAll().stream().sorted();
+//        System.out.println("itemStream = " + itemStream.map(item -> modelMapper.map(item, ItemDTO.class)).toList());
         return itemRepo.findAll().stream().map(item -> modelMapper.map(item, ItemDTO.class)).toList();
     }
 }

@@ -1,5 +1,6 @@
 package lk.ijse.springdata.api;
 
+import jakarta.validation.Valid;
 import lk.ijse.springdata.dto.ItemDTO;
 import lk.ijse.springdata.service.ItemService;
 import lk.ijse.springdata.util.GenerateID;
@@ -26,14 +27,14 @@ public class ItemController {
     }
 
     @PostMapping
-    public ResponseEntity<?> saveItem(@RequestBody ItemDTO itemDTO) {
+    public ResponseEntity<?> saveItem(@RequestBody @Valid ItemDTO itemDTO) {
         itemDTO.setCode(GenerateID.generateID());
         ItemDTO itemDTO1 = itemService.saveItem(itemDTO);
         return itemDTO1!=null ? ResponseEntity.ok(itemDTO1) : ResponseEntity.ok("Item Not Saved");
     }
 
     @PutMapping
-    public ResponseEntity<?> updateItem(@RequestBody ItemDTO itemDTO) {
+    public ResponseEntity<?> updateItem(@RequestBody @Valid ItemDTO itemDTO) {
         boolean isUpdated = itemService.updateItem(itemDTO);
         return isUpdated ? ResponseEntity.ok("Item Updated") : ResponseEntity.ok("Item Not Updated");
     }

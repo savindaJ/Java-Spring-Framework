@@ -1,8 +1,11 @@
 package lk.ijse.springdata.dto;
 
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 
 /**
  * @author : savindaJ
@@ -12,9 +15,15 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ItemDTO {
+public class ItemDTO implements Serializable {
+    @Null(message = "Code should not be null") // can null only when saving
     private String code;
+    @NotBlank(message = "Description should not be null")
+    @Pattern(regexp = "^[A-Za-z0-9 ]+$", message = "Description should be a string")
     private String description;
-    private double unitPrice;
-    private int qtyOnHand;
+//    @Pattern(regexp = "^[0-9.]+$", message = "Unit Price should be a number")
+    private Double unitPrice;
+    @DecimalMin(value = "0", message = "Qty on Hand should be a positive number")
+    @DecimalMax(value = "1000", message = "Qty on Hand should not exceed 1000")
+    private Integer qtyOnHand;
 }
