@@ -41,7 +41,7 @@ public class JPAConfig {
 
         @Bean
         public DataSource dataSource() {
-        DriverManagerDataSource source = new DriverManagerDataSource();
+        var source = new DriverManagerDataSource();
         source.setDriverClassName(driver);
         source.setUrl(url);
         source.setUsername(user);
@@ -52,13 +52,13 @@ public class JPAConfig {
         @Bean
         public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 
-        HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+        var vendorAdapter = new HibernateJpaVendorAdapter();
         vendorAdapter.setGenerateDdl(true);
         vendorAdapter.setShowSql(true);
         vendorAdapter.setDatabase(Database.MYSQL);
         vendorAdapter.setDatabasePlatform(dialect);
 
-        LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
+        var factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(vendorAdapter);
         factory.setPackagesToScan(entitys);
         factory.setDataSource(dataSource());
@@ -68,7 +68,7 @@ public class JPAConfig {
         @Bean
         public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
 
-        JpaTransactionManager txManager = new JpaTransactionManager();
+        var txManager = new JpaTransactionManager();
         txManager.setEntityManagerFactory(entityManagerFactory);
         return txManager;
     }

@@ -44,12 +44,14 @@
             <scope>provided</scope>
         </dependency>
 
+<!--        we want orm implementation / jpa implementation-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>6.0.0.Final</version>
         </dependency>
 
+<!--        we wat driver manager-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
