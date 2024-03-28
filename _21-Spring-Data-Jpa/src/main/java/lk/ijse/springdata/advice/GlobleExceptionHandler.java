@@ -62,11 +62,11 @@ public class GlobleExceptionHandler {
         return errorAttributes;
     }
 
-    @ExceptionHandler(Exception.class)
+   /* @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public Map<String, Object> handleException(Exception exception) {
         return getCommonErrorAttribute(HttpStatus.INTERNAL_SERVER_ERROR, exception.getMessage());
-    }
+    }*/
 
     /**
      * @param http HttpStatus

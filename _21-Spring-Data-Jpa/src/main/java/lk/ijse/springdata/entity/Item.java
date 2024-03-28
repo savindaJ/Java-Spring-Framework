@@ -1,5 +1,6 @@
 package lk.ijse.springdata.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
@@ -21,4 +22,6 @@ public class Item {
     private String description;
     private double unitPrice;
     private int qtyOnHand;
+    @Column(columnDefinition = "LONGTEXT")
+    private String png;
 }

@@ -1,5 +1,7 @@
 package lk.ijse.springdata;
 
+import jakarta.servlet.MultipartConfigElement;
+import jakarta.servlet.ServletRegistration;
 import lk.ijse.springdata.config.WebAppConfig;
 import lk.ijse.springdata.config.WebRootConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -23,5 +25,11 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
     @Override
     protected String[] getServletMappings() {
         return new String[]{"/"};
+    }
+
+    @Override
+    protected void customizeRegistration(ServletRegistration.Dynamic registration) {
+        System.out.println("customizeRegistration");
+        registration.setMultipartConfig(new MultipartConfigElement("/tmp", 2097152*100, 4194304*100, 212121212));
     }
 }

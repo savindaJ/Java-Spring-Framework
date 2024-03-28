@@ -5,9 +5,12 @@ import lk.ijse.springdata.dto.ItemDTO;
 import lk.ijse.springdata.service.ItemService;
 import lk.ijse.springdata.util.GenerateID;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.util.Base64;
 import java.util.List;
 
 /**
@@ -26,8 +29,21 @@ public class ItemController {
         this.itemService = itemService;
     }
 
-    @PostMapping
-    public ResponseEntity<?> saveItem(@RequestBody @Valid ItemDTO itemDTO) {
+    @PostMapping(consumes = {MediaType.MULTIPART_FORM_DATA_VALUE},produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<?> saveItem(
+            @RequestPart("code") String code,
+            @RequestPart("description") String description,
+            @RequestPart("unitPrice") Double unitPrice,
+            @RequestPart("qtyOnHand") Integer qtyOnHand,
+            @RequestPart("png") String image)
+    {
+        System.out.println("code = " + code);
+        System.out.println("description = " + description);
+        System.out.println("unitPrice = " + unitPrice);
+        System.out.println("qtyOnHand = " + qtyOnHand);
+        System.out.println("image = " + image);
+        String encode = Base64.getEncoder().encodeToString(image.getBytes());
+        ItemDTO itemDTO = new ItemDTO(code, description, unitPrice, qtyOnHand, encode);
         itemDTO.setCode(GenerateID.generateID());
         ItemDTO itemDTO1 = itemService.saveItem(itemDTO);
         return itemDTO1!=null ? ResponseEntity.ok(itemDTO1) : ResponseEntity.ok("Item Not Saved");
@@ -53,5 +69,11 @@ public class ItemController {
     @GetMapping
     public List<ItemDTO> getAllItems() {
         return itemService.getAllItems();
+    }
+
+    @PostMapping(value = "/upload",consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
+    public ResponseEntity<?> upload(@RequestParam("png") MultipartFile file){
+        System.out.println("file = " + file.getOriginalFilename());
+        return ResponseEntity.ok("File Uploaded");
     }
 }
