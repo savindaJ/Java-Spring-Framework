@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
 
 /**
@@ -33,20 +35,20 @@ public class CustomerController {
     }
 
     @PostMapping
-    public ResponseEntity<?> saveCustomer(@RequestBody CustomerDTO customer){
+    public ResponseEntity<?> saveCustomer(@RequestBody CustomerDTO customer) throws URISyntaxException {
         customerService.saveCustomer(customer);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.created(new URI("/customer")).build();
     }
 
     @DeleteMapping
     public ResponseEntity<?> deleteCustomer(@RequestParam String id){
         customerService.deleteCustomer(id);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.noContent().build();
     }
 
     @PutMapping
     public ResponseEntity<?> updateCustomer(@RequestBody CustomerDTO customer){
         customerService.updateCustomer(customer);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.noContent().build();
     }
 }
