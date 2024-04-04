@@ -27,6 +27,9 @@ class ItemServiceImplTest {
 
     ItemService itemService;
 
+    /**
+     * @param itemService itemService
+     */
     @Autowired
     public ItemServiceImplTest(ItemService itemService) {
         this.itemService = itemService;
