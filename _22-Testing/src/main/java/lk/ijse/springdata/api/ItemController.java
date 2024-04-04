@@ -3,7 +3,7 @@ package lk.ijse.springdata.api;
 import jakarta.validation.Valid;
 import lk.ijse.springdata.dto.ItemDTO;
 import lk.ijse.springdata.service.ItemService;
-import lk.ijse.springdata.util.GenerateID;
+import static lk.ijse.springdata.util.GenerateID.generateID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -44,7 +44,7 @@ public class ItemController {
         System.out.println("image = " + image);
         String encode = Base64.getEncoder().encodeToString(image.getBytes());
         ItemDTO itemDTO = new ItemDTO(code, description, unitPrice, qtyOnHand);
-        itemDTO.setCode(GenerateID.generateID());
+        itemDTO.setCode(generateID());
         ItemDTO itemDTO1 = itemService.saveItem(itemDTO);
         return itemDTO1!=null ? ResponseEntity.ok(itemDTO1) : ResponseEntity.ok("Item Not Saved");
     }

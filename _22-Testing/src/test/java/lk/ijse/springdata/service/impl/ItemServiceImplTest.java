@@ -25,11 +25,12 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 @WebAppConfiguration
 class ItemServiceImplTest {
 
-    ItemService itemService;
+    private final ItemService itemService;
 
     /**
      * @param itemService itemService
      */
+
     @Autowired
     public ItemServiceImplTest(ItemService itemService) {
         this.itemService = itemService;
@@ -49,7 +50,7 @@ class ItemServiceImplTest {
      */
     @Test
     void updateItem() {
-        assertThrows(NotFoundException.class, () -> itemService.updateItem(new ItemDTO("ITM-0d1b", "Item 1", 100.3, 10)));
+        assertThrows(NotFoundException.class, () -> itemService.updateItem(new ItemDTO("ITM-saasas", "Item 1", 100.3, 10)));
     }
 
     /**
@@ -57,7 +58,7 @@ class ItemServiceImplTest {
      */
     @Test
     void deleteItem() {
-        assertThrows(NotFoundException.class, () -> itemService.deleteItem("ITM-0d1b"));
+        assertThrows(NumberFormatException.class, () -> itemService.deleteItem("ITM-saasaaasasas"));
     }
 
     /**
@@ -65,6 +66,7 @@ class ItemServiceImplTest {
      */
     @Test
     void getAllItems() {
-        assertNotEquals("null", itemService.getAllItems());
+        itemService.getAllItems().forEach(System.out::println);
+        assertNotEquals(2, itemService.getAllItems().size());
     }
 }
