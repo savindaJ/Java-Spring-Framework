@@ -8,6 +8,7 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collection;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -54,5 +55,17 @@ class ItemRepoTest {
         Item item = itemRepo.searchByCodeAndDescription("ITM-360948a2", "Raththi");
         System.out.println(item);
     }
-    
+
+//    @Test
+//    void testGetAllItems() {
+//        Collection<Item> allItems = itemRepo.findAllActiveUsers();
+//        System.out.println(allItems.toString());
+//    }
+
+    @Test
+    void testFindItemByCode() {
+        Item item = itemRepo.findItemByCode("ITM-360948a2");
+        System.out.println(item);
+    }
+
 }
