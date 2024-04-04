@@ -29,7 +29,14 @@
         <option value="$PROJECT_DIR$/_18-Mapping-Spec/pom.xml" />
         <option value="$PROJECT_DIR$/_19-Spring-web-Project/pom.xml" />
         <option value="$PROJECT_DIR$/_21-Spring-Data-Jpa/pom.xml" />
+        <option value="$PROJECT_DIR$/untitled/pom.xml" />
+        <option value="$PROJECT_DIR$/_22-Testing/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/untitled/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_21" project-jdk-name="corretto-17" project-jdk-type="JavaSDK">
