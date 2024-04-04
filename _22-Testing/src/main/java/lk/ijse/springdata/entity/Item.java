@@ -22,6 +22,4 @@ public class Item {
     private String description;
     private double unitPrice;
     private int qtyOnHand;
-    @Column(columnDefinition = "LONGTEXT")
-    private String png;
 }

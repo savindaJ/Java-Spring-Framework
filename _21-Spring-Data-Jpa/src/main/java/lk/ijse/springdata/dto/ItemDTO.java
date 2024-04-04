@@ -28,5 +28,4 @@ public class ItemDTO implements Serializable {
     @DecimalMin(value = "0", message = "Qty on Hand should be a positive number")
     @DecimalMax(value = "1000", message = "Qty on Hand should not exceed 1000")
     private Integer qtyOnHand;
-    private String png;
 }

@@ -43,7 +43,7 @@ public class ItemController {
         System.out.println("qtyOnHand = " + qtyOnHand);
         System.out.println("image = " + image);
         String encode = Base64.getEncoder().encodeToString(image.getBytes());
-        ItemDTO itemDTO = new ItemDTO(code, description, unitPrice, qtyOnHand, encode);
+        ItemDTO itemDTO = new ItemDTO(code, description, unitPrice, qtyOnHand);
         itemDTO.setCode(GenerateID.generateID());
         ItemDTO itemDTO1 = itemService.saveItem(itemDTO);
         return itemDTO1!=null ? ResponseEntity.ok(itemDTO1) : ResponseEntity.ok("Item Not Saved");

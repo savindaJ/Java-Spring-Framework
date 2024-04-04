@@ -27,9 +27,4 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
         return new String[]{"/"};
     }
 
-    @Override
-    protected void customizeRegistration(ServletRegistration.Dynamic registration) {
-        System.out.println("customizeRegistration");
-        registration.setMultipartConfig(new MultipartConfigElement("/tmp", 2097152*100, 4194304*100, 212121212));
-    }
 }
