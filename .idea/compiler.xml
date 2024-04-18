@@ -20,6 +20,7 @@
         <module name="_08-Dipendency-injection-02" />
         <module name="_12-RunTime-Value-Injection" />
         <module name="_07-Dependency-Injection" />
+        <module name="_24-Spring-Security" />
         <module name="_05-Bean-Scope" />
         <module name="_04-Bean-Definition" />
         <module name="_10-Spring-LightMode" />
@@ -38,6 +39,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="_23-Spring-Boot" options="-parameters" />
+      <module name="_24-Spring-Security" options="-parameters" />
     </option>
   </component>
 </project>
