@@ -1,26 +1,53 @@
 package lk.ijse.springsecurity.api;
+import lk.ijse.springsecurity.dto.CustomerDTO;
+import lk.ijse.springsecurity.entity.Customer;
+import lk.ijse.springsecurity.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
 
 /**
  * @author : savindaJ
- * @date : 2024-04-18
+ * @date : 2024-04-04
  * @since : 0.1.0
  **/
 @RestController
-@RequestMapping("/customer")
+@RequestMapping("/customers")
 public class CustomerController {
 
-    @PostMapping
-    public String saveCustomer(){
-        return "Customer Saved";
+
+    private final CustomerService customerService;
+
+    @Autowired
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
     }
 
+
     @GetMapping
-    public String getCustomer(){
-        return "Customer Details";
+    public List<Customer> getCustomers(){
+        return customerService.getAllCustomers();
+    }
+
+    @PostMapping
+    public ResponseEntity<?> saveCustomer(@RequestBody CustomerDTO customer) throws URISyntaxException {
+        customerService.saveCustomer(customer);
+        return ResponseEntity.created(new URI("/customer")).build();
+    }
+
+    @DeleteMapping
+    public ResponseEntity<?> deleteCustomer(@RequestParam String id){
+        customerService.deleteCustomer(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping
+    public ResponseEntity<?> updateCustomer(@RequestBody CustomerDTO customer){
+        customerService.updateCustomer(customer);
+        return ResponseEntity.noContent().build();
     }
 }
